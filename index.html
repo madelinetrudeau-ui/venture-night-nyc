@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Louisiana Venture Night: NYC guest guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://assets.la.io/fonts/laio-fonts.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap">
+<style>
+:root{
+  --dark:#01233C; --dark-2:#0A3150; --line:#1D4A6B; --easy:#63DCDE; --electric:#00B9FE;
+  --text:#FFFFFF; --muted:#A9C4D6;
+  --sans:'Aktiv Grotesk','Roboto',system-ui,sans-serif; --mono:'JetBrains Mono',ui-monospace,monospace;
+  color-scheme:dark;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --dark:#01233C; --text:#FFFFFF; color-scheme:dark; } }
+:root[data-theme="dark"]{ --dark:#01233C; --text:#FFFFFF; }
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 200px); background:var(--dark)}
+body{margin:0; background:var(--dark); color:var(--text); font-family:var(--sans); font-weight:400; font-size:16px; line-height:1.5; -webkit-text-size-adjust:100%}
+body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top,0px); z-index:10; background:var(--dark)}
+a{color:var(--easy)}
+:focus-visible{outline:2px solid var(--electric); outline-offset:2px}
+.wrap{max-width:720px; margin:0 auto; padding:0 20px}
+.label{font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--easy); font-weight:700; margin:0}
+h1,h2,h3{margin:0; font-weight:700; line-height:1.1}
+.light{font-weight:300}
+
+/* Hero */
+.hero{padding:28px 0 8px; position:relative}
+.logo{width:150px; height:auto; color:var(--text); display:block}
+.title{font-size:clamp(40px,11vw,68px); letter-spacing:-.02em; margin:12px 0 0; line-height:.98}
+.title .light,.title .strong{display:block}
+.title .strong{font-weight:700}
+.bracket{position:relative; padding:18px 20px; margin-top:28px}
+.bracket::before,.bracket::after{content:""; position:absolute; top:0; bottom:0; width:14px; border:2px solid var(--easy)}
+.bracket::before{left:0; border-right:0}
+.bracket::after{right:0; border-left:0}
+.when{font-size:20px; font-weight:700; margin:0 0 8px}
+.purpose{font-size:24px; font-weight:300; line-height:1.25; margin:16px 0 0; color:var(--easy); max-width:22ch}
+.jump{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:20px}
+.jump .btn{min-height:52px}
+.jump .btn.primary{grid-column:auto; font-size:15px}
+.bracket.compact{padding:12px 18px; margin-top:22px}
+.bracket.compact .when{font-size:16px; margin:0 0 4px}
+.bracket.compact .where{font-size:14px}
+.ros{list-style:none; padding:0; margin:0 0 10px}
+.ros li{display:flex; gap:14px; padding:3px 0}
+.ros .t{width:68px; flex:none; font-weight:700; color:var(--easy)}
+.linkbtn{background:none; border:0; padding:0; margin-left:14px; color:var(--easy); font:inherit; text-decoration:underline; cursor:pointer}
+.where a{margin-right:0}
+.why .point{display:flex; gap:14px; padding:14px 0; border-top:1px solid var(--line)}
+.why .plus{color:var(--easy); font-weight:700; font-size:22px; line-height:1.1; flex:none; width:16px}
+.why h3{font-size:18px; margin:0 0 4px}
+.why p{margin:0; color:var(--muted)}
+.find{margin-top:8px}
+.find summary{cursor:pointer; color:var(--muted); font-size:13px; text-decoration:underline; text-underline-offset:3px; list-style:none}
+.find summary::-webkit-details-marker{display:none}
+.find .search{margin-top:8px; display:block; width:100%; max-width:100%}
+.search:focus-visible{outline-offset:-2px}
+.where{margin:0; color:var(--muted); font-size:15px}
+.where b{color:var(--text); font-weight:700}
+.actions{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:16px}
+.btn{display:flex; align-items:center; justify-content:center; min-height:48px; padding:12px 14px; border:2px solid var(--easy); color:var(--text); background:transparent; font:700 15px/1.2 var(--sans); text-decoration:none; cursor:pointer; border-radius:0; text-align:center}
+.btn.primary{grid-column:1/-1; background:var(--electric); border-color:var(--electric); color:var(--dark); font-size:17px}
+.btn:active{transform:translateY(1px)}
+.toast{position:fixed; left:50%; bottom:calc(20px + env(safe-area-inset-bottom,0px)); transform:translateX(-50%); background:var(--easy); color:var(--dark); padding:10px 16px; font-weight:700; opacity:0; pointer-events:none; transition:opacity .2s; z-index:30}
+.toast.show{opacity:1}
+
+/* Hosts */
+.section{padding:40px 0 0}
+.section h2{font-size:28px; margin:8px 0 6px}
+.lede{color:var(--muted); margin:0 0 16px; max-width:60ch}
+.sponsors{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+.sponsor{border:1px solid var(--line); padding:14px; min-height:96px; display:flex; flex-direction:column; justify-content:space-between; gap:10px}
+.sponsor .slot{border:1px dashed var(--line); color:var(--muted); font-family:var(--mono); font-size:10px; letter-spacing:.08em; text-transform:uppercase; display:flex; align-items:center; justify-content:center; min-height:44px; text-align:center; padding:6px}
+.sponsor .slot svg{width:110px; color:var(--text)}
+.sponsor.laio .slot{border:0}
+.sponsor .who{font-weight:700}
+.helpnote{margin:12px 0 0; font-size:13px; color:var(--muted)}
+.helpnote a{color:var(--muted)}
+.hosts{list-style:none; padding:0; margin:0; border-top:1px solid var(--line)}
+.hosts li{display:flex; justify-content:space-between; align-items:baseline; gap:12px; padding:7px 0; border-bottom:1px solid var(--line); font-size:15px}
+.hosts .o{font-size:13px}
+.h-sm{font-size:22px!important}
+.lede.sm{font-size:14px; margin-bottom:10px}
+.ways{padding:44px 0 0}
+.ways h2{font-size:30px; margin:0}
+.step{display:flex; align-items:center; gap:12px; margin:0 0 6px}
+.step .num{flex:none; width:34px; height:34px; border:2px solid var(--easy); color:var(--easy); font-weight:700; display:flex; align-items:center; justify-content:center; font-size:16px}
+.step h2{font-size:26px!important; margin:0!important}
+.hosts .n{font-weight:700; color:var(--text); text-decoration:none}
+.hosts a.n.live{text-decoration:underline; text-decoration-color:var(--easy); text-underline-offset:4px}
+.hosts a.n.li::after{content:" in"; font-family:var(--mono); font-size:10px; color:var(--easy); vertical-align:2px}
+.hosts .o{color:var(--muted); text-align:right}
+
+/* Glance */
+.glance{display:grid; grid-template-columns:repeat(3,1fr); gap:10px}
+.tile{border:1px solid var(--line); padding:14px 12px; text-align:left; background:transparent; color:var(--text); cursor:pointer; font-family:var(--sans)}
+.tile .big{font-size:40px; font-weight:300; line-height:1; display:block; margin:10px 0 8px}
+.tile .mk{display:flex; align-items:center; gap:8px; font-weight:700}
+.tile .br{color:var(--muted); font-size:13px; line-height:1.4}
+.mark{width:10px; height:10px; transform:rotate(45deg); flex:none; display:inline-block}
+.mark.LA{background:var(--easy)}
+.mark.NY{border:2px solid var(--easy)}
+.mark.OT{border:2px solid var(--muted); transform:none}
+
+/* Match */
+.match{border:2px solid var(--easy); padding:18px}
+select{width:100%; min-height:48px; background:var(--dark-2); color:var(--text); border:1px solid var(--easy); border-radius:0; font:400 16px var(--sans); padding:10px 12px}
+.results{margin-top:14px}
+.res{display:block; border-top:1px solid var(--line); padding:12px 0; text-decoration:none; color:var(--text)}
+.res:first-child{border-top:0}
+.res .rn{font-weight:700; display:flex; align-items:center; gap:8px}
+.res .rw{color:var(--easy); font-size:14px; margin-top:2px}
+.res .rp{color:var(--muted); font-size:14px}
+.subhead{font-weight:700; margin:18px 0 4px; display:flex; align-items:center; gap:8px}
+.subhead:first-child{margin-top:4px}
+.starbox{margin-top:16px; border:1px solid var(--line); padding:14px 16px}
+.starbox .res{padding:10px 0}
+.empty{color:var(--muted); margin:12px 0 0}
+
+/* Toolbar */
+.toolbar{position:sticky; top:env(safe-area-inset-top,0px); z-index:5; background:var(--dark); padding:12px 0; border-bottom:1px solid var(--line); margin-top:16px}
+.search{width:100%; min-height:46px; background:var(--dark-2); border:1px solid var(--line); color:var(--text); font:400 16px var(--sans); padding:10px 12px; border-radius:0}
+.search::placeholder{color:var(--muted)}
+.frow{padding-top:14px}
+.flabel{display:flex; align-items:center; gap:10px; font-size:17px; font-weight:700; color:var(--text); margin-bottom:8px}
+.fnum{flex:none; width:26px; height:26px; background:var(--easy); color:var(--dark); font-size:14px; display:flex; align-items:center; justify-content:center}
+.count{font-size:13px; color:var(--easy); margin:8px 0 0; font-weight:700}
+.chips{display:flex; gap:8px; overflow-x:auto; scrollbar-width:none}
+.toolbar .chip{flex:1 0 auto}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none; min-height:34px; padding:6px 12px; border:1px solid var(--line); background:transparent; color:var(--text); font:700 13px var(--sans); cursor:pointer; border-radius:0}
+.chip[aria-pressed="true"]{background:var(--easy); border-color:var(--easy); color:var(--dark)}
+
+/* Directory */
+.market{padding-top:28px}
+.market > h2{font-size:34px; display:flex; align-items:center; gap:12px}
+.market > h2 .mark{width:14px; height:14px}
+.group{margin-top:22px}
+.group h3{font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--easy); padding-bottom:8px; border-bottom:2px solid var(--easy)}
+.card{border-bottom:1px solid var(--line); padding:16px 0}
+.card:target{background:var(--dark-2); outline:2px solid var(--electric); outline-offset:4px}
+.card .top{display:flex; justify-content:space-between; gap:12px; align-items:flex-start}
+.card h4{margin:0; font-size:20px; font-weight:700; line-height:1.2}
+.card .role{color:var(--muted); font-size:14px; margin-top:2px}
+.card .people{margin:6px 0 0; color:var(--text); font-size:15px}
+.card .desc{margin:8px 0 0; color:var(--muted); max-width:62ch}
+.card .tbd{margin:8px 0 0; font-family:var(--mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); border:1px dashed var(--line); display:inline-block; padding:4px 8px}
+.tags{display:flex; flex-wrap:wrap; gap:6px; margin-top:10px}
+.tag{font-family:var(--mono); font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:var(--easy); border:1px solid var(--line); padding:3px 7px}
+.links{display:flex; gap:16px; margin-top:10px; font-size:14px; font-weight:700}
+.links a,.links button{color:var(--easy); background:none; border:0; padding:0; font:inherit; cursor:pointer; text-decoration:underline; text-underline-offset:3px}
+.star{flex:none; width:44px; height:44px; border:1px solid var(--line); background:transparent; color:var(--easy); cursor:pointer; display:flex; align-items:center; justify-content:center; border-radius:0}
+.star svg{width:18px; height:18px}
+.star[aria-pressed="true"]{background:var(--easy); color:var(--dark); border-color:var(--easy)}
+.none{color:var(--muted); padding:24px 0}
+footer{padding:56px 0 40px; color:var(--muted); font-size:14px}
+footer .sponsor .logo{width:120px}
+.pillars{font-weight:700; color:var(--text); margin:0 0 6px}
+@media (min-width:640px){ .actions{grid-template-columns:2fr 1fr 1fr} .btn.primary{grid-column:auto} }
+@media (prefers-reduced-motion:reduce){ *{transition:none!important} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <h1 class="title"><span class="strong">Louisiana</span><span class="light">Venture Night: NYC</span></h1>
+    <p class="purpose">Your guide to who’s in the room, and who to meet.</p>
+    <div class="jump">
+      <a class="btn primary" href="#match">Find who to meet</a>
+      <a class="btn" href="#roomH">See everyone in the room</a>
+    </div>
+    <div class="bracket compact">
+      <p class="when">Wednesday, December 3, 5 to 8 PM</p>
+      <p class="where">Remarks from our hosts at 6 PM<br><b>Salmagundi Club</b>, 47 Fifth Avenue, New York<br><a href="https://maps.google.com/?q=Salmagundi+Club,+47+Fifth+Avenue,+New+York,+NY+10003" target="_blank" rel="noopener">Open in Maps</a> <button class="linkbtn" id="copyAddr" type="button">Copy address</button></p>
+    </div>
+    <p class="helpnote">Not registered yet? <a href="https://luma.com/tir4iaeu" target="_blank" rel="noopener">RSVP on Luma</a>. Need help? Call or text Madeline at <a href="tel:+17405918084">740-591-8084</a>.</p>
+  </header>
+
+  <section class="section why" aria-labelledby="whyH">
+    <h2 id="whyH">Why Louisiana. Why now.</h2>
+    <p class="lede">The industries that power the country run through Louisiana. The technology that will run them is being built here first.</p>
+    <div class="point"><span class="plus" aria-hidden="true">+</span><div><h3>The capital is in place.</h3><p>Louisiana Opportunity Capital, a $100M state venture program, invests through 8 active Louisiana fund partners. The Louisiana Growth Fund writes seed to Series A checks directly into Louisiana startups. Many of those investors are in the room tonight, looking for co-investors.</p></div></div>
+    <div class="point"><span class="plus" aria-hidden="true">+</span><div><h3>The demand is real.</h3><p>More than $260B in capital investment has come to Louisiana since 2024, from energy and petrochemicals to shipbuilding and the future of spaceflight. That includes SpaceX’s $100B Starbase Louisiana and Meta’s $50B Hyperion digital factory, each set to be the largest of its kind in the world.</p></div></div>
+    <div class="point"><span class="plus" aria-hidden="true">+</span><div><h3>The proving ground is open.</h3><p>LA.IO and Greater New Orleans, Inc. bring deep connections across the state. We connect startups to what it takes to prove, test and deploy frontier technology from Louisiana: ports and waterways, roads, industrial operators, and the partners and capital behind them.</p></div></div>
+  </section>
+
+
+
+  <section class="ways" aria-labelledby="waysH">
+    <p class="label">Make the most of tonight</p>
+    <h2 id="waysH">Two ways to find the right people</h2>
+  </section>
+  <section class="section" id="match" aria-labelledby="matchH" style="padding-top:28px">
+    <div class="step"><span class="num">1</span><h2 id="matchH">Who should you meet tonight?</h2></div>
+    <p class="lede">Find your name in the dropdown and we’ll suggest who to look for, based on the sectors you work in. Your choice stays private to this phone.</p>
+    <div class="match">
+      <label class="label" for="me" style="display:block;margin-bottom:8px">I am</label>
+      <select id="me"><option value="">Choose your name</option></select>
+      <div class="results" id="results" aria-live="polite"></div>
+    </div>
+  </section>
+
+
+
+</div>
+
+<div class="wrap"><section class="section" aria-labelledby="roomH">
+    <div class="step"><span class="num">2</span><h2 id="roomH">Everyone in the room</h2></div>
+    <p class="lede"><span id="total"></span> guests tonight. Narrow the list in two steps.</p>
+  </section></div>
+<div class="toolbar">
+  <div class="wrap">
+    <div class="frow" style="padding-top:0"><span class="flabel"><span class="fnum">1</span>Choose a state</span>
+    <div class="chips" role="group" aria-label="Choose a state">
+      <button class="chip" data-f="market" data-v="Louisiana" aria-pressed="false">Louisiana</button>
+      <button class="chip" data-f="market" data-v="New York" aria-pressed="false">New York</button>
+      <button class="chip" data-f="market" data-v="" aria-pressed="true">Both</button>
+    </div></div>
+    <div class="frow"><span class="flabel"><span class="fnum">2</span>Choose who you want to meet</span>
+    <div class="chips" role="group" aria-label="Choose who you want to meet">
+      <button class="chip" data-f="type" data-v="Venture Fund" aria-pressed="false">Investors</button>
+      <button class="chip" data-f="type" data-v="Startup" aria-pressed="false">Startups</button>
+      <button class="chip" data-f="type" data-v="Ecosystem" aria-pressed="false">Ecosystem</button>
+      <button class="chip" data-f="type" data-v="" aria-pressed="true">Everyone</button>
+    </div></div>
+    <p class="count" id="count" aria-live="polite"></p>
+    <details class="find"><summary>Looking for someone? Search by name</summary><input class="search" id="q" type="search" placeholder="Name or firm" aria-label="Search by name or firm" autocomplete="off"></details>
+  </div>
+</div>
+
+<main class="wrap" id="dir"></main>
+
+<div class="wrap">
+  <section class="section" aria-labelledby="hostsH">
+    <h2 id="hostsH" class="h-sm">Want an introduction? Meet your hosts.</h2>
+    <p class="lede sm">Tell us who you came to meet and we’ll walk you over.</p>
+    <ul class="hosts">
+      <li><a class="n" data-li="https://www.linkedin.com/in/madelinekawanaka" href="#">Madeline Kawanaka</a><span class="o">LA.IO</span></li>
+      <li><a class="n" data-li="https://www.linkedin.com/in/camilleterk" href="#">Camille Terk</a><span class="o">LA.IO</span></li>
+      <li><a class="n" data-li="https://la.io/team/kelly-raney/" href="#">Kelly Raney</a><span class="o">LA.IO</span></li>
+      <li><a class="n" data-li="https://www.linkedin.com/in/eviepoitevent" href="#">Evie Poitevent Sanders</a><span class="o">Greater New Orleans, Inc.</span></li>
+      <li><a class="n" data-li="https://www.linkedin.com/in/cryanroberts" href="#">Ryan Roberts</a><span class="o">Neutral Grounds Solutions</span></li>
+      <li><a class="n" data-li="https://www.linkedin.com/in/david-beach-8b884a5" href="#">David Beach</a><span class="o">Crestmont Investments</span></li>
+    </ul>
+  </section>
+  <footer>
+    <p class="label">Hosted by</p>
+    <div class="sponsors" style="margin:10px 0 20px">
+      <div class="sponsor laio"><div class="slot"><svg class="logo" role="img" aria-label="Louisiana Innovation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 274.65 67.88"><g fill="currentColor"><path d="M60.22,49.17v5.16h3.330v1.61h-5.16v-6.77h1.83Z"/><path d="M69,56.07c-1.74,0-3.04-1.43-3.04-3.51s1.3-3.51,3.04-3.51,3.04,1.43,3.04,3.51-1.3,3.51-3.04,3.51ZM69,50.65c-.73,0-1.19.75-1.19,1.9s.46,1.9,1.19,1.9,1.190-.75,1.19-1.9-.46-1.9-1.19-1.9Z"/><path d="M74.39,53.21v-4.04h1.82v3.74c0,1.03.17,1.62,1,1.62s1-.59,1-1.62v-3.74h1.83v4.04c0,1.98-1.19,2.86-2.83,2.86s-2.820-.88-2.82-2.86Z"/><path d="M82.83,55.94v-1.58h1.69v-3.61h-1.69v-1.58h5.2v1.58h-1.69v3.61h1.69v1.58h-5.2Z"/><path d="M91.65,53.6c.49.67,1.23,1,2.01,1,.66,0,1.04-.2,1.04-.58s-.32-.44-.61-.5l-1.39-.31c-1.01-.23-1.77-.77-1.77-1.96,0-1.32,1.02-2.2,2.59-2.2,1.2,0,2.1.49,2.74,1.25l-1.1,1.14c-.35-.52-.81-.91-1.64-.91-.51,0-.88.23-.88.57,0,.31.25.41.52.47l1.34.31c1.34.31,1.93.93,1.93,2.04,0,1.41-1.25,2.16-2.77,2.16-1.34,0-2.3-.43-3.03-1.18l1.020-1.29Z"/><path d="M99.26,55.94v-1.58h1.69v-3.61h-1.69v-1.58h5.2v1.58h-1.69v3.61h1.69v1.58h-5.2Z"/><path d="M111.03,54.63h-2.01l-.37,1.31h-1.77l2.07-6.77h2.24l2.07,6.77h-1.87l-.37-1.31ZM109.41,53.26h1.25l-.6-2.15h-.04l-.6,2.15Z"/><path d="M119.44,53.12v-3.96h1.65v6.77h-1.71l-2.27-4.63v4.63h-1.66v-6.77h2.17l1.81,3.96Z"/><path d="M127.45,54.63h-2.01l-.37,1.31h-1.77l2.07-6.77h2.24l2.07,6.77h-1.87l-.37-1.31ZM125.83,53.26h1.25l-.6-2.15h-.04l-.6,2.15Z"/><path d="M137.49,55.94v-.81h1.91v-5.16h-1.91v-.81h4.76v.81h-1.9v5.16h1.9v.81h-4.76Z"/><path d="M149.74,54.41v-5.24h.87v6.77h-.83l-3.35-5.59v5.59h-.87v-6.77h1.1l3.08,5.24Z"/><path d="M157.96,54.41v-5.24h.87v6.77h-.83l-3.35-5.59v5.59h-.87v-6.77h1.1l3.08,5.24Z"/><path d="M164.51,56.07c-1.63,0-2.82-1.43-2.82-3.51s1.18-3.51,2.82-3.51,2.82,1.43,2.82,3.51-1.18,3.51-2.82,3.51ZM164.51,49.86c-1.12,0-1.85,1.04-1.85,2.7s.73,2.7,1.85,2.7,1.85-1.04,1.85-2.7-.73-2.7-1.85-2.7Z"/><path d="M172.17,55.94l-2.27-6.77h1.01l1.83,5.66h.04l1.81-5.66h.97l-2.27,6.77h-1.12Z"/><path d="M182.14,53.96h-2.47l-.63,1.98h-.92l2.26-6.77h1.14l2.26,6.77h-.98l-.64-1.98ZM179.92,53.21h1.99l-.98-3.01h-.04l-.97,3.01Z"/><path d="M188.67,55.94v-5.95h-2.4v-.82h5.76v.82h-2.43v5.95h-.93Z"/><path d="M194.98,55.94v-.81h1.91v-5.16h-1.91v-.81h4.76v.81h-1.9v5.16h1.9v.81h-4.76Z"/><path d="M205.58,56.07c-1.63,0-2.82-1.43-2.82-3.51s1.18-3.51,2.82-3.510,2.82,1.43,2.82,3.51-1.18,3.51-2.82,3.51ZM205.58,49.86c-1.12,0-1.85,1.04-1.85,2.7s.73,2.7,1.85,2.7,1.85-1.04,1.85-2.7-.73-2.7-1.85-2.7Z"/><path d="M215.45,54.41v-5.24h.87v6.77h-.83l-3.35-5.59v5.59h-.87v-6.77h1.1l3.08,5.24Z"/><path d="M131.74,32.01h8.52v8.52h-8.52v-8.52Z"/><path d="M65.87,12.58v21.29h13.75v6.65h-21.29V12.58h7.54Z"/><path d="M106.06,35.11h-8.29l-1.51,5.41h-7.32l8.56-27.94h9.22l8.560,27.94h-7.72l-1.51-5.41ZM99.36,29.48h5.14l-2.48-8.87h-.18l-2.48,8.87Z"/><path d="M159.15,40.53v-6.52h6.96v-14.9h-6.96v-6.52h21.47v6.52h-6.96v14.9h6.96v6.52h-21.47Z"/><path d="M203.77,41.06c-7.19,0-12.55-5.9-12.55-14.5s5.37-14.5,12.55-14.5,12.55,5.9,12.55,14.5-5.37,14.5-12.55,14.5ZM203.77,18.7c-3.020,0-4.92,3.11-4.92,7.85s1.91,7.85,4.92,7.85,4.92-3.11,4.92-7.85-1.91-7.85-4.92-7.85Z"/><polygon points="14.73 33.94 41.3 60.51 33.94 67.88 0 33.94 33.94 0 41.3 7.36 14.73 33.94"/><polygon points="259.93 33.94 233.35 7.36 240.72 0 274.65 33.94 240.72 67.88 233.35 60.51 259.93 33.94"/></g></svg></div><span class="who">LA.IO</span></div>
+      <div class="sponsor"><div class="slot">Greater New Orleans, Inc. logo</div><span class="who">Greater New Orleans, Inc.</span></div>
+      <div class="sponsor" style="grid-column:1/-1"><div class="slot">Crestmont Investments logo</div><span class="who">Crestmont Investments</span></div>
+    </div>
+    <p class="pillars">Capital, Coaching, Connections.</p>
+    <p>Louisiana Venture Night: NYC is hosted by LA.IO, Greater New Orleans, Inc. and Crestmont Investments.</p>
+    <p>Questions tonight? Call or text Madeline at <a href="tel:+17405918084">740-591-8084</a>.</p>
+  </footer>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+const ORGS = [{"id": "louisiana-opportunity-capital", "name": "Louisiana Opportunity Capital", "type": "Venture Fund", "market": "Louisiana", "place": "", "desc": "Louisiana’s $100M state venture program, run by the Louisiana Economic Development Corporation. Invests mainly as a fund of funds across 8 active Louisiana fund partners, and the main venture arm of the state.", "web": "https://www.opportunitylouisiana.gov/innovation", "tags": ["Generalist", "Energy", "Industrial & Manufacturing", "Robotics", "AI & Software", "Health", "Water & Coastal"], "people": [{"n": "Madeline Kawanaka", "m": "Louisiana"}, {"n": "Camille Terk", "m": "Louisiana"}, {"n": "Kelly Raney", "m": "Louisiana"}], "role": ""}, {"id": "1834-ventures", "name": "1834 Ventures", "type": "Venture Fund", "market": "Louisiana", "place": "", "desc": "$20M pre-seed to Series A fund backing founders from the Tulane alumni and faculty network. Anchored in New Orleans and an active co-investor alongside Tulane’s venture programs.", "web": "https://www.1834.vc", "tags": ["Generalist", "AI & Software", "Health", "Consumer"], "people": [{"n": "Evan Nicoll", "m": "Louisiana"}, {"n": "Patrick Hernandez", "m": "Louisiana"}], "role": ""}, {"id": "benson-capital-partners", "name": "Benson Capital Partners", "type": "Venture Fund", "market": "Louisiana", "place": "", "desc": "Gayle Benson’s venture firm, backing scalable tech across the Gulf South and Southeast, from logistics and energy to health and hardware.", "web": "https://bensoncp.com", "tags": ["Energy", "Health", "Industrial & Manufacturing", "Logistics & Maritime", "Hardware", "AI & Software"], "people": [{"n": "George Rovegno", "m": "Louisiana"}, {"n": "Jordan Rafferty", "m": "Louisiana"}], "role": ""}, {"id": "corridor-vc", "name": "Corridor VC", "type": "Venture Fund", "market": "Louisiana", "place": "", "desc": "$50M pre-seed to Series A fund anchored in New Orleans, investing across the Southeast in AI, utilities, energy and advanced manufacturing. Initial checks up to $500K.", "web": "https://www.corridorvc.com", "tags": ["AI & Software", "Energy", "Climate", "Industrial & Manufacturing", "Hardware"], "people": [{"n": "Kwam Aidoo", "m": "Louisiana"}, {"n": "Kelli Saulny", "m": "Louisiana"}], "role": ""}, {"id": "boot64-ventures", "name": "Boot64 Ventures", "type": "Venture Fund", "market": "Louisiana", "place": "", "desc": "Pre-seed and seed fund based in Metairie and the first in Louisiana to deploy SSBCI capital. Backs scalable startups that create jobs in the state.", "web": "https://boot64.com", "tags": ["Generalist", "AI & Software", "Consumer", "Energy", "Health"], "people": [{"n": "Mickal Adler", "m": "Louisiana"}], "role": ""}, {"id": "new-louisiana-angel-fund-nlaf", "name": "New Louisiana Angel Fund (NLAF)", "type": "Venture Fund", "market": "Louisiana", "place": "", "desc": "North Louisiana’s organized angel capital, managed by BRF in Shreveport. Now on its third fund and syndicating with investor groups in New Orleans, Baton Rouge, Austin, Dallas and Houston.", "web": "https://www.brfla.org", "tags": ["Generalist", "Health", "AI & Software", "Energy"], "people": [{"n": "Dave Smith", "m": "Louisiana"}, {"n": "Julie Gilley Milam", "m": "Louisiana"}], "role": ""}, {"id": "momentum-fund", "name": "Momentum Fund", "type": "Venture Fund", "market": "Louisiana", "place": "", "desc": "The Idea Village’s $7M fund, investing in breakout alumni of the VILLAGEx accelerator. Pre-vetted Gulf South deal flow with follow-on capacity.", "web": "https://ideavillage.org/momentumfund", "tags": ["Generalist", "AI & Software", "Consumer", "Industrial & Manufacturing"], "people": [{"n": "Andrew Albert", "m": "Louisiana"}], "role": ""}, {"id": "ochsner-ventures", "name": "Ochsner Ventures", "type": "Venture Fund", "market": "Louisiana", "place": "", "desc": "Venture arm of Ochsner Health, Louisiana’s largest health system. Runs the $10M Ochsner Louisiana Innovation Fund for early-stage health and health-adjacent companies.", "web": "https://www.ochsner.org/ventures", "tags": ["Health", "AI & Software", "Robotics"], "people": [{"n": "Aimee Quirk", "m": "Louisiana"}], "role": ""}, {"id": "batteries-included-fund", "name": "Batteries Included Fund", "type": "Venture Fund", "market": "Louisiana", "place": "", "desc": "Early-stage electrification fund writing $25K to $100K checks into companies that put batteries in useful places, from grid storage to electric machines.", "web": "https://batteriesincludedfund.com", "tags": ["Energy", "Climate", "Hardware"], "people": [{"n": "Matt Candler", "m": "Louisiana"}], "role": ""}, {"id": "astroworks-ventures", "name": "Astroworks Ventures", "type": "Venture Fund", "market": "Louisiana", "place": "", "desc": "New Orleans aerospace venture studio led by a former Blue Origin senior director, building and backing space and aviation companies near NASA’s Michoud and Stennis facilities.", "web": "https://www.astroworksventures.com", "tags": ["Space & Aerospace", "Hardware"], "people": [{"n": "George Weinmann", "m": "Louisiana"}], "role": ""}, {"id": "ingest-ai", "name": "Ingest AI", "type": "Startup", "market": "Louisiana", "place": "", "desc": "Restaurant intelligence platform that pulls every system a restaurant runs into one view of the business. Built in New Orleans.", "web": "https://ingest.ai", "tags": ["AI & Software", "Consumer"], "people": [{"n": "Daniel Meth", "m": "Louisiana"}, {"n": "Logan Farley", "m": "Louisiana"}], "role": ""}, {"id": "arculus", "name": "Arculus", "type": "Startup", "market": "Louisiana", "place": "", "desc": "Pipeline robotics. Its autonomous SputterPig coats existing lines from the inside, stopping corrosion, cutting friction and readying them for hydrogen and CO2.", "web": "https://arculus-solutions.com", "tags": ["Energy", "Climate", "Robotics", "Industrial & Manufacturing", "Hardware"], "people": [{"n": "Lewis Dutel", "m": "Louisiana"}], "role": ""}, {"id": "os-benefits", "name": "OS Benefits", "type": "Startup", "market": "Louisiana", "place": "", "desc": "Health insurance and wellness benefits built for hospitality workers, an industry most employers leave uncovered. A Fast Company Most Innovative Company.", "web": "https://osbenefits.co", "tags": ["Fintech", "Health", "Consumer"], "people": [{"n": "Elizabeth Tilton", "m": "Louisiana"}], "role": ""}, {"id": "nominal", "name": "Nominal", "type": "Startup", "market": "Louisiana", "place": "", "desc": "The software stack for testing and validating hardware, used on aircraft, rockets, reactors and robots. Backed by Sequoia, General Catalyst and Lightspeed.", "web": "https://nominal.io", "tags": ["AI & Software", "Defense", "Space & Aerospace", "Robotics", "Hardware", "Energy"], "people": [{"n": "Will Reynoir", "m": "Louisiana"}], "role": ""}, {"id": "nexterity", "name": "Nexterity", "type": "Startup", "market": "Louisiana", "place": "Team in Louisiana and New York", "desc": "Field robotics for heavy industry, starting with a portable robot that bolts and unbolts pipe flanges. Founded by a former ExxonMobil engineer and Forbes 30 Under 30 honoree.", "web": "https://nexterity.tech", "tags": ["Robotics", "Industrial & Manufacturing", "Energy", "Defense", "Hardware"], "people": [{"n": "Lindsey Elliott", "m": "Louisiana"}, {"n": "Shahn Andersen", "m": "New York"}], "role": ""}, {"id": "chrysalis", "name": "Chrysalis", "type": "Startup", "market": "Louisiana", "place": "", "desc": "Privacy-first AI health app that helps patients with chronic, hard-to-diagnose illness spot patterns and share them with their doctors. Based in Baton Rouge.", "web": "https://chrysalis.inc", "tags": ["Health", "AI & Software"], "people": [{"n": "Brent Martin", "m": "Louisiana"}, {"n": "Brittany Martin", "m": "Louisiana"}], "role": ""}, {"id": "la-io", "name": "LA.IO", "type": "Ecosystem", "market": "Louisiana", "place": "", "desc": "Louisiana Innovation, the innovation division of Louisiana Economic Development. Connects founders and investors to capital, coaching and connections, and opens the state as a proving ground for frontier tech.", "web": "https://www.opportunitylouisiana.gov/innovation", "tags": ["Generalist", "Robotics", "Energy", "Industrial & Manufacturing", "AI & Software", "Water & Coastal", "Space & Aerospace"], "people": [{"n": "Josh Fleig", "m": "Louisiana"}], "role": ""}, {"id": "gno-inc", "name": "Greater New Orleans, Inc.", "type": "Ecosystem", "market": "Louisiana", "place": "", "desc": "Known as GNO, Inc. Economic development organization for the Greater New Orleans region and co-host of Louisiana Venture Night.", "web": "https://gnoinc.org", "tags": ["Generalist", "Energy", "Logistics & Maritime", "Health"], "people": [{"n": "Evie Poitevent Sanders", "m": "Louisiana"}], "role": ""}, {"id": "the-idea-village", "name": "The Idea Village", "type": "Ecosystem", "market": "Louisiana", "place": "", "desc": "New Orleans accelerator behind VILLAGEx and the 3rd Coast Venture Summit, and a front door to Gulf South deal flow.", "web": "https://ideavillage.org", "tags": ["Generalist", "AI & Software", "Consumer"], "people": [{"n": "Liz Maxwell", "m": "Louisiana"}], "role": ""}, {"id": "neutral-ground-multi-state-solutions-ngms", "name": "Neutral Ground Multi-State Solutions (NGMS)", "type": "Ecosystem", "market": "Louisiana", "place": "", "desc": "New Orleans consulting firm providing government relations, business development and strategic advisory services.", "web": "https://ngsla.com", "tags": ["Generalist"], "people": [{"n": "Ryan Roberts", "m": "Louisiana"}], "role": ""}, {"id": "water-innovation-studio-of-louisiana", "name": "Water Innovation Studio of Louisiana", "type": "Ecosystem", "market": "Louisiana", "place": "", "desc": "LA.IO’s water innovation studio at The Water Institute in Baton Rouge, piloting and commercializing technologies for flooding, coastal risk and stormwater.", "web": "https://thewaterinstitute.org/innovation-studio", "tags": ["Water & Coastal", "Climate"], "people": [{"n": "Jeff Hicks", "m": "Louisiana"}], "role": ""}, {"id": "newlab-new-orleans", "name": "Newlab New Orleans", "type": "Ecosystem", "market": "Louisiana", "place": "", "desc": "Newlab’s industrial innovation hub in New Orleans’ Bywater, focused on energy, carbon management, industrial efficiency and maritime technology.", "web": "https://www.newlab.com", "tags": ["Energy", "Climate", "Industrial & Manufacturing", "Logistics & Maritime", "Robotics"], "people": [{"n": "Abdalla Osman", "m": "Louisiana"}], "role": ""}, {"id": "tulane-innovation-institute", "name": "Tulane Innovation Institute", "type": "Ecosystem", "market": "Louisiana", "place": "", "desc": "Tulane’s commercialization engine, connecting university research to industry partners and startups. Home of the Tulane Ventures seed fund.", "web": "https://innovation.tulane.edu", "tags": ["Health", "AI & Software", "Generalist"], "people": [{"n": "Casey Candebat", "m": "Louisiana"}], "role": ""}, {"id": "crestmont-investments", "name": "Crestmont Investments", "type": "Venture Fund", "market": "New York", "place": "", "desc": "New York investment firm bringing direct deals to a network of family offices, focused on energy, decarbonization and disruptive technology. Led by New Orleans native David Beach.", "web": "https://crestmontinvestments.com", "tags": ["Energy", "Climate", "Generalist"], "people": [{"n": "David Beach", "m": "New York"}, {"n": "Brandon Alvarez", "m": "New York"}, {"n": "Yani Beach", "m": "New York"}], "role": ""}, {"id": "a16z-american-dynamism", "name": "a16z American Dynamism", "type": "Venture Fund", "market": "New York", "place": "", "desc": "Andreessen Horowitz’s practice backing founders who build for the national interest, across defense, aerospace, manufacturing, energy and public safety.", "web": "https://a16z.com/american-dynamism", "tags": ["Defense", "Space & Aerospace", "Industrial & Manufacturing", "Energy", "Robotics", "Hardware"], "people": [{"n": "Danny Penny", "m": "New York"}], "role": ""}, {"id": "new-york-angels", "name": "New York Angels", "type": "Venture Fund", "market": "New York", "place": "", "desc": "One of the most active angel networks in the U.S., with members backing seed and early-stage startups across sectors.", "web": "https://www.newyorkangels.com", "tags": ["Generalist"], "people": [{"n": "Peter Bodenheimer", "m": "New York"}], "role": ""}, {"id": "vhs-ventures", "name": "VHS Ventures", "type": "Venture Fund", "market": "New York", "place": "", "desc": "Seed-stage consumer fund investing in consumer brands and the commerce infrastructure behind them. Initial checks of $250K to $500K, scaling through Series A.", "web": "https://www.vhs.vc", "tags": ["Consumer"], "people": [{"n": "Sumeet Shah", "m": "New York"}], "role": ""}, {"id": "azolla-ventures", "name": "Azolla Ventures", "type": "Venture Fund", "market": "New York", "place": "", "desc": "Climate venture fund backing early-stage technologies with outsized potential to cut emissions, willing to take risks other capital won’t.", "web": "https://www.azollaventures.com", "tags": ["Climate", "Energy", "Hardware"], "people": [{"n": "Eric Yao", "m": "New York"}], "role": ""}, {"id": "fuse-ventures", "name": "Fuse Ventures", "type": "Venture Fund", "market": "New York", "place": "", "desc": "Early-stage firm pairing capital with hands-on operating support, investing across govtech and defense, education and health.", "web": "", "tags": ["Defense", "Education", "Health"], "people": [{"n": "Trevor Pearson", "m": "New York"}], "role": ""}, {"id": "nyu-tandon-future-labs", "name": "NYU Tandon Future Labs", "type": "Venture Fund", "market": "New York", "place": "New York and Louisiana", "desc": "NYU Tandon’s network of startup incubators and accelerators in New York, supporting deep tech and climate founders.", "web": "https://futurelabs.nyc", "tags": ["AI & Software", "Climate", "Hardware", "Generalist"], "people": [{"n": "Teal Willingham", "m": "New York"}], "role": ""}, {"id": "ponderosa-vc", "name": "Ponderosa VC", "type": "Venture Fund", "market": "New York", "place": "", "desc": "Pre-seed and seed climate fund writing $100K to $750K checks into companies transforming food, agriculture, oceans and forestry. Part of the Galvanize Climate Solutions ecosystem.", "web": "https://ponderosavc.com", "tags": ["Climate", "Food & Ag", "Water & Coastal"], "people": [{"n": "Anthony Cortese", "m": "New York"}], "role": ""}, {"id": "1248-angels", "name": "1248 Angels", "type": "Venture Fund", "market": "New York", "place": "", "desc": "Angel group writing checks up to $150K into seed and Series A companies in healthcare, fintech, consumer essentials and B2B software.", "web": "https://1248angels.com", "tags": ["Health", "Fintech", "Consumer", "AI & Software"], "people": [{"n": "DeHavia Stewart", "m": "New York"}], "role": ""}, {"id": "florence-capital", "name": "Florence Capital", "type": "Venture Fund", "market": "New York", "place": "", "desc": "Venture investment firm giving individual and institutional investors access to startups through single-company investment vehicles.", "web": "https://florencecapital.com", "tags": ["Generalist"], "people": [{"n": "Brad Axelrod", "m": "New York"}], "role": ""}, {"id": "new-system-ventures", "name": "New System Ventures", "type": "Venture Fund", "market": "New York", "place": "", "desc": "Climate and energy transition venture firm investing across mobility, energy and industry, with an eye on energy security and reindustrialization.", "web": "https://newsystemventures.com", "tags": ["Climate", "Energy", "Industrial & Manufacturing", "Logistics & Maritime"], "people": [{"n": "Mathilde Beniflah", "m": "New York"}], "role": ""}, {"id": "aligned-climate-capital", "name": "Aligned Climate Capital", "type": "Venture Fund", "market": "New York", "place": "", "desc": "Climate investment firm led by former heads of the U.S. Department of Energy’s Loan Programs Office, investing across the energy transition.", "web": "https://alignedclimatecapital.com", "tags": ["Climate", "Energy"], "people": [{"n": "Tanatswa Mapondera", "m": "New York"}], "role": ""}, {"id": "plum-alley-ventures", "name": "Plum Alley Ventures", "type": "Venture Fund", "market": "New York", "place": "", "desc": "Invests in frontier technology companies, from health and climate to AI, led by diverse founding teams.", "web": "https://plumalley.co", "tags": ["Health", "Climate", "AI & Software", "Hardware"], "people": [{"n": "Avantika Daing", "m": "New York"}], "role": ""}, {"id": "michael-mimeles", "name": "Michael Mimeles", "type": "Venture Fund", "market": "New York", "place": "", "desc": "Private investor based in New York and board member of The Idea Village in New Orleans.", "web": "", "tags": ["Generalist"], "people": [{"n": "Michael Mimeles", "m": "New York"}], "role": "Independent investor"}, {"id": "kind-capital", "name": "Kind Capital", "type": "Venture Fund", "market": "New York", "place": "", "desc": "Impact investing firm founded by John Duong, who previously ran the Lumina Foundation’s $50M impact investing arm.", "web": "https://kindcap.com", "tags": ["Generalist", "Education"], "people": [{"n": "John Duong", "m": "New York"}, {"n": "Paulina Munoz", "m": "New York"}], "role": ""}, {"id": "the-artemis-fund", "name": "The Artemis Fund", "type": "Venture Fund", "market": "New York", "place": "", "desc": "Venture fund backing women-founded companies in fintech, commerce and the care economy.", "web": "https://www.theartemisfund.com", "tags": ["Fintech", "Consumer", "Health"], "people": [{"n": "Stephanie Campbell", "m": "New York"}], "role": ""}, {"id": "magnetic", "name": "Magnetic", "type": "Venture Fund", "market": "New York", "place": "", "desc": "Private investor and founder of Magnetic, a boutique New York real estate firm with $2B+ in residential sales.", "web": "", "tags": ["Real Estate & Construction"], "people": [{"n": "Scott Harris", "m": "New York"}], "role": ""}, {"id": "space-capital", "name": "Space Capital", "type": "Venture Fund", "market": "New York", "place": "", "desc": "Seed-stage venture firm investing in the space economy, from GPS and geospatial intelligence to launch and in-orbit infrastructure.", "web": "https://www.spacecapital.com", "tags": ["Space & Aerospace", "AI & Software"], "people": [{"n": "Chad Anderson", "m": "New York"}], "role": ""}, {"id": "fernstone", "name": "Fernstone", "type": "Startup", "market": "New York", "place": "", "desc": "AI-native insurance brokerage for businesses, from Y Combinator’s Fall 2025 batch.", "web": "https://www.fernstone.com", "tags": ["AI & Software", "Fintech"], "people": [{"n": "Bryant Le", "m": "New York"}], "role": ""}, {"id": "ntop", "name": "nTop", "type": "Startup", "market": "New York", "place": "", "desc": "Computational design software that lets engineers design and iterate complex parts for aerospace, defense and advanced manufacturing.", "web": "https://www.ntop.com", "tags": ["AI & Software", "Industrial & Manufacturing", "Defense", "Space & Aerospace"], "people": [{"n": "Bradley Rothenberg", "m": "New York"}], "role": ""}, {"id": "oui-therapeutics", "name": "Oui Therapeutics", "type": "Startup", "market": "New York", "place": "", "desc": "Digital therapeutics company developing evidence-based treatments for suicide prevention.", "web": "https://www.ouitherapeutics.com", "tags": ["Health", "AI & Software"], "people": [{"n": "Seth Feuerstein", "m": "New York"}], "role": ""}, {"id": "lumaril", "name": "Lumaril", "type": "Startup", "market": "New York", "place": "", "desc": "AI that plugs into the control systems factories already run, capturing veteran operators’ know-how to lift throughput and yield. Backed by Elad Gil and Lux.", "web": "https://lumaril.com", "tags": ["AI & Software", "Industrial & Manufacturing", "Robotics"], "people": [{"n": "Benjamin Duffield", "m": "New York"}, {"n": "Kim Lear", "m": "New York"}], "role": ""}, {"id": "nidus", "name": "Nidus", "type": "Startup", "market": "New York", "place": "", "desc": "Robotics AI lab bringing foundation models onto defense and industrial factory floors. Raised $30M led by Kleiner Perkins and Costanoa.", "web": "https://nidus.tech", "tags": ["Robotics", "Defense", "Industrial & Manufacturing", "AI & Software"], "people": [{"n": "Justin Sealy", "m": "New York"}], "role": ""}, {"id": "copia-automation", "name": "Copia Automation", "type": "Startup", "market": "New York", "place": "", "desc": "Industrial DevOps platform bringing source control, automated backups and disaster recovery to PLCs and industrial automation code, for manufacturers in automotive, aerospace, energy, food and pharma.", "web": "https://www.copia.io", "tags": ["AI & Software", "Industrial & Manufacturing", "Energy", "Space & Aerospace"], "people": [{"n": "Caitlyn Brennan", "m": "New York"}], "role": ""}, {"id": "hedral", "name": "Hedral", "type": "Startup", "market": "New York", "place": "", "desc": "Technology for architecture, engineering and construction, aiming to set a new standard for how buildings are designed.", "web": "https://hedral.co", "tags": ["AI & Software", "Real Estate & Construction"], "people": [{"n": "Urszula Solarz", "m": "New York"}], "role": ""}, {"id": "wandercraft", "name": "Wandercraft", "type": "Startup", "market": "New York", "place": "", "desc": "Self-balancing exoskeletons that help people with mobility impairments walk again, in rehab clinics and now at home.", "web": "https://www.wandercraft.eu", "tags": ["Robotics", "Health", "Hardware"], "people": [{"n": "Sophie Pellas", "m": "New York"}], "role": ""}, {"id": "newlab-brooklyn", "name": "Newlab Brooklyn", "type": "Ecosystem", "market": "New York", "place": "", "desc": "Innovation hub at the Brooklyn Navy Yard where startups, corporates and cities build and pilot frontier technology. Sister hub to Newlab New Orleans.", "web": "https://www.newlab.com", "tags": ["Climate", "Robotics", "Hardware", "Industrial & Manufacturing", "Energy"], "people": [{"n": "Brandon Corts", "m": "New York"}, {"n": "Sahil Jain", "m": "New York"}], "role": ""}, {"id": "gordian-group", "name": "Gordian Group", "type": "Ecosystem", "market": "New York", "place": "", "desc": "Independent New York investment bank specializing in complex financial advisory, restructuring and distressed situations.", "web": "https://gordiangroup.com", "tags": ["Generalist"], "people": [{"n": "Henry Owsley", "m": "New York"}, {"n": "Peter Kaufman", "m": "New York"}], "role": ""}, {"id": "red-stick-labs", "name": "Red Stick Labs", "type": "Ecosystem", "market": "New York", "place": "", "desc": "", "web": "", "tags": [], "people": [{"n": "Anshu Vaish", "m": "New York"}], "role": ""}, {"id": "bagert-law-group", "name": "Bagert Law Group", "type": "Ecosystem", "market": "New York", "place": "", "desc": "", "web": "https://sbagertlaw.com", "tags": ["Generalist"], "people": [{"n": "Susu Bagert", "m": "New York"}], "role": ""}, {"id": "deborah-sternberg", "name": "Deborah Sternberg", "type": "Ecosystem", "market": "New York", "place": "", "desc": "New York attorney.", "web": "", "tags": ["Generalist"], "people": [{"n": "Deborah Sternberg", "m": "New York"}], "role": "Independent attorney"}, {"id": "weill-cornell-medicine", "name": "Weill Cornell Medicine", "type": "Ecosystem", "market": "New York", "place": "", "desc": "Cornell University’s medical school and academic health center in New York City.", "web": "https://weill.cornell.edu", "tags": ["Health"], "people": [{"n": "Marc Weill", "m": "New York"}], "role": ""}, {"id": "institute-for-entrepreneurial-leadership-ifel", "name": "Institute for Entrepreneurial Leadership (IFEL)", "type": "Ecosystem", "market": "New York", "place": "", "desc": "Nonprofit founded in 2002 that connects small business owners and founders with relationship capital, capacity building and capital readiness support. Its Capital Circles program grows and diversifies the pool of active angel investors.", "web": "https://weareifel.org", "tags": ["Generalist"], "people": [{"n": "Stephanie Fowler", "m": "New York"}], "role": ""}, {"id": "dhc-real-estate-services", "name": "DHC Real Estate Services", "type": "Ecosystem", "market": "New York", "place": "", "desc": "Veteran-owned commercial real estate and tenant representation firm for defense tech, advanced manufacturing, financial services and federal clients. Specializes in site selection and lease strategy for industrial, lab, office and healthcare facilities, in a national alliance with Cushman & Wakefield.", "web": "https://dhcres.com", "tags": ["Real Estate & Construction", "Defense", "Industrial & Manufacturing", "Health"], "people": [{"n": "James Cassidy Jr.", "m": "New York"}], "role": ""}, {"id": "the-blue-hour-collective", "name": "The Blue Hour Collective", "type": "Ecosystem", "market": "New York", "place": "", "desc": "Co-founded by Nina Sharma and Milton Speid, it gives emerging fund managers and next-generation allocators training, networks and capital access support. Programs like Fund Readiness and Allocator Lab bridge GPs and LPs.", "web": "https://www.thebluehourcollective.org", "tags": ["Generalist"], "people": [{"n": "Nina Sharma", "m": "New York"}], "role": ""}, {"id": "kate-mccrery", "name": "Kate McCrery", "type": "Ecosystem", "market": "New York", "place": "", "desc": "New Orleans native and social entrepreneurship leader, formerly with Echoing Green and Loyola New Orleans’ entrepreneurship center.", "web": "", "tags": ["Generalist"], "people": [{"n": "Kate McCrery", "m": "New York"}], "role": ""}, {"id": "new-industrials", "name": "New Industrials", "type": "Ecosystem", "market": "Other", "place": "Washington, DC", "desc": "The New American Industrial Alliance (NAIA): a multi-sector trade association uniting builders, investors and policymakers to rebuild America’s industrial base. Hosts the annual Reindustrialize Summit.", "web": "https://newindustrials.org", "tags": ["Industrial & Manufacturing", "Defense", "Robotics", "Energy"], "people": [{"n": "Jack Scalia", "m": "Other"}], "role": ""}, {"id": "equalify", "name": "Equalify", "type": "Startup", "market": "Other", "place": "Boston", "desc": "Open-source web accessibility platform that helps organizations find and fix accessibility issues.", "web": "", "tags": ["AI & Software"], "people": [{"n": "Blake Bertuccelli-Booth", "m": "Other"}], "role": ""}, {"id": "adrien-lanusse", "name": "Adrien Lanusse", "type": "Ecosystem", "market": "Other", "place": "California", "desc": "", "web": "", "tags": ["Consumer"], "people": [{"n": "Adrien Lanusse", "m": "Other"}], "role": ""}, {"id": "yellow-ventures", "name": "Yellow Ventures", "type": "Venture Fund", "market": "Other", "place": "South Carolina", "desc": "Venture firm backing founders in fintech, agtech, deep tech, medtech and quantum computing. Also manages SSBCI capital deployment programs for multiple jurisdictions.", "web": "https://yellowventures.vc", "tags": ["Fintech", "Food & Ag", "Health", "Hardware", "AI & Software"], "people": [{"n": "Will Cruz", "m": "Other"}], "role": ""}];
+document.querySelectorAll(".hosts a.n").forEach(a=>{ const u=a.dataset.li; if(/^https:\/\//.test(u)){ a.href=u; a.target="_blank"; a.rel="noopener"; a.classList.add("live"); if(/linkedin\.com/.test(u)) a.classList.add("li"); } else { a.removeAttribute("href"); } });
+const TYPES = [["Venture Fund","Investors"],["Startup","Startups"],["Ecosystem","Ecosystem partners"]];
+const MARKETS = [["Louisiana","Louisiana","LA"],["New York","New York","NY"],["Other","Also in the room","OT"]];
+const STAR_SVG = '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1 L13 7 L19 8 L14.5 12.5 L15.6 19 L10 16 L4.4 19 L5.5 12.5 L1 8 L7 7 Z" fill="currentColor"/></svg>';
+const store = { get(k,d){ try{ const v=localStorage.getItem(k); return v===null?d:JSON.parse(v);}catch(e){return d} }, set(k,v){ try{localStorage.setItem(k,JSON.stringify(v))}catch(e){} } };
+const filters = {market:"",type:"",q:""};
+const $ = s=>document.querySelector(s);
+const el = (t,c,txt)=>{const e=document.createElement(t); if(c) e.className=c; if(txt!=null) e.textContent=txt; return e;};
+function toast(m){const t=$("#toast"); t.textContent=m; t.classList.add("show"); clearTimeout(t._h); t._h=setTimeout(()=>t.classList.remove("show"),1800);}
+
+$("#copyAddr").addEventListener("click", async ()=>{
+  const a="Salmagundi Club, 47 Fifth Avenue, New York, NY 10003";
+  try{ await navigator.clipboard.writeText(a); toast("Address copied"); }catch(e){ toast(a); }
+});
+
+// Glance
+const people = ORGS.flatMap(o=>o.people.map(p=>({...p,type:o.type})));
+$("#total").textContent = people.length;
+
+// Directory
+function matchesFilters(o){
+  if(filters.market && o.market!==filters.market) return false;
+  if(filters.type && o.type!==filters.type) return false;
+  if(filters.q){
+    const hay=(o.name+" "+o.role+" "+o.people.map(p=>p.n).join(" ")+" "+o.tags.join(" ")+" "+o.desc).toLowerCase();
+    if(!filters.q.split(/\s+/).every(w=>hay.includes(w))) return false;
+  }
+  return true;
+}
+function card(o){
+  const c = el("article","card"); c.id=o.id;
+  const top = el("div","top"); const head = el("div");
+  head.append(el("h4",null,o.name));
+  const roleBits=[o.role,o.place].filter(Boolean);
+  if(roleBits.length) head.append(el("div","role",roleBits.join(", ")));
+  head.append(el("p","people",o.people.map(p=>p.n).join(", ")));
+top.append(head); c.append(top);
+  if(o.desc) c.append(el("p","desc",o.desc));
+  const tg = o.tags.filter(t=>t!=="Generalist");
+  if(tg.length){ const t=el("div","tags"); tg.forEach(x=>t.append(el("span","tag",x))); c.append(t); }
+  const l = el("div","links");
+  if(o.web && /^https:\/\//.test(o.web)){ const a=el("a",null,"Website"); a.href=o.web; a.target="_blank"; a.rel="noopener"; l.append(a); }
+  if(l.childNodes.length) c.append(l);
+  return c;
+}
+function render(){
+  const d=$("#dir"); d.textContent="";
+  let shown=0;
+  MARKETS.forEach(([key,label,cls])=>{
+    const ms = ORGS.filter(o=>o.market===key && matchesFilters(o));
+    if(!ms.length) return;
+    const sec = el("section","market"); sec.id="m-"+cls;
+    const h = el("h2"); h.append(el("span","mark "+cls), document.createTextNode(label)); sec.append(h);
+    TYPES.forEach(([t,tl])=>{
+      const g = ms.filter(o=>o.type===t); if(!g.length) return;
+      const gr = el("div","group"); gr.append(el("h3",null,tl));
+      g.forEach(o=>{gr.append(card(o)); shown++;});
+      sec.append(gr);
+    });
+    d.append(sec);
+  });
+  if(!shown){ d.append(el("p","none","No one matches that. Try a firm name, a first name or a sector like Energy.")); }
+  const filtered = filters.q||filters.market||filters.type;
+  const np = ORGS.filter(matchesFilters).reduce((n,o)=>n+o.people.length,0);
+  $("#count").textContent = filtered ? `Showing ${np} of ${people.length} guests` : `Showing all ${people.length} guests`;
+}
+function toTop(){ const d=$("#dir"), tb=$(".toolbar"); const y=d.getBoundingClientRect().top; if(y<tb.getBoundingClientRect().bottom){ window.scrollTo({top:window.scrollY+y-tb.offsetHeight-8}); } }
+function syncChips(){ document.querySelectorAll(".chip").forEach(x=>x.setAttribute("aria-pressed", filters[x.dataset.f]===x.dataset.v)); }
+$("#q").addEventListener("input",e=>{ filters.q=e.target.value.trim().toLowerCase(); render(); toTop(); });
+document.querySelectorAll(".chip").forEach(b=>b.addEventListener("click",()=>{
+  filters[b.dataset.f]=b.dataset.v; syncChips(); render(); toTop();
+}));
+
+
+// Find your match
+const sel=$("#me");
+MARKETS.forEach(([key,label])=>{
+  const og=document.createElement("optgroup"); og.label=label;
+  ORGS.filter(o=>o.market===key).flatMap(o=>o.people.map(p=>({p,o}))).filter(x=>x.p.m===key || x.o.market===key)
+    .sort((a,b)=>a.p.n.localeCompare(b.p.n)).forEach(({p,o})=>{ const op=document.createElement("option"); op.value=o.id+"|"+p.n; op.textContent=p.n+", "+o.name; og.append(op); });
+  sel.append(og);
+});
+const TW={"Venture Fund":3,"Startup":2,"Ecosystem":1};
+function candidates(meOrg, market){
+  const mine=new Set(meOrg.tags.filter(t=>t!=="Generalist"));
+  const meGen=meOrg.tags.includes("Generalist");
+  const out=[];
+  ORGS.forEach(o=>{
+    if(o.id===meOrg.id || !o.tags.length || o.market!==market) return;
+    const shared=o.tags.filter(t=>t!=="Generalist" && mine.has(t));
+    const gen=o.tags.includes("Generalist")||meGen;
+    if(!shared.length && !gen) return;
+    const fit=shared.length*3+(gen?1:0);
+    const b=o.type;
+    const role = b==="Venture Fund"?"Investor":b==="Startup"?"Startup":"Ecosystem partner";
+    let why;
+    if(shared.length){ const list=shared.slice(0,2).join(" and "); why = (meOrg.type==="Venture Fund"&&b==="Venture Fund") ? `Fellow investor in ${list}` : `${role} in ${list}`; }
+    else why = `${role} working across sectors`;
+    out.push({o,fit,why});
+  });
+  return out.sort((x,y)=> (TW[y.o.type]-TW[x.o.type]) || (y.fit-x.fit)).filter(x=>x.o.type!=="Ecosystem" || x.fit>=3);
+}
+function resLink(o,why){
+  const a=el("a","res"); a.href="#"+o.id;
+  const n=el("span","rn"); n.append(el("span","mark "+(o.market==="Louisiana"?"LA":o.market==="New York"?"NY":"OT")), document.createTextNode(o.name));
+  a.append(n, el("div","rw",why), el("div","rp",o.people.map(p=>p.n).join(", ")));
+  a.addEventListener("click",()=>{ filters.market="";filters.type="";filters.q=""; $("#q").value=""; syncChips(); render(); });
+  return a;
+}
+function subhead(label,cls){ const h=el("p","subhead"); h.append(el("span","mark "+cls), document.createTextNode(label)); return h; }
+function showMatches(v){
+  const r=$("#results"); r.textContent="";
+  if(!v){ return; }
+  const [id,name]=v.split("|"); const me=ORGS.find(o=>o.id===id); if(!me) return;
+  const myMarket=(me.people.find(p=>p.n===name)||{}).m||me.market;
+  if(!me.tags.length){ r.append(el("p","empty","We don’t have your sectors yet, so we can’t suggest matches. Search the list below or ask a host for an intro.")); return; }
+  const pick=(list,nf,ns)=>[...list.filter(x=>x.o.type==="Venture Fund").slice(0,nf),...list.filter(x=>x.o.type==="Startup").slice(0,ns),...list.filter(x=>x.o.type==="Ecosystem").slice(0,1)];
+  if(myMarket==="Louisiana"){
+    const ny=pick(candidates(me,"New York"),4,3);
+    r.append(subhead("Meet these New Yorkers","NY"));
+    ny.forEach(x=>r.append(resLink(x.o,x.why)));
+  } else {
+    const la=pick(candidates(me,"Louisiana"),3,2);
+    const ny=pick(candidates(me,"New York"),2,1).filter(x=>x.o.type!=="Ecosystem");
+    r.append(subhead("Meet these Louisianans first","LA"));
+    la.forEach(x=>r.append(resLink(x.o,x.why)));
+    if(ny.length){ r.append(subhead("Also worth finding from New York","NY")); ny.forEach(x=>r.append(resLink(x.o,x.why))); }
+  }
+}
+sel.addEventListener("change",()=>{ store.set("lvn-me",sel.value); showMatches(sel.value); });
+const saved=store.get("lvn-me","");
+render();
+if(saved && [...sel.options].some(o=>o.value===saved)){ sel.value=saved; showMatches(saved); }
+function goHash(){ const h=location.hash.slice(1); if(!h) return; const t=document.getElementById(h); if(t) t.scrollIntoView(); }
+window.addEventListener("hashchange",goHash); setTimeout(goHash,50);
+</script>
+</body>
+</html>
